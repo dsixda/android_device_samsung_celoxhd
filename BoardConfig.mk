@@ -68,3 +68,6 @@ BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 
+# Turn off the 'Android' text-mode logo at start
+TARGET_NO_INITLOGO := true
+
