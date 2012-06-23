@@ -62,12 +62,13 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 2149580800
 # From df
 BOARD_FLASH_BLOCK_SIZE := 4096
 
+TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk1p1
 BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/mmcblk0p28
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 
-# Turn off the 'Android' text-mode logo at start
+# Turn off the 'Android' text-mode splash screen with flashing cursor :P
 TARGET_NO_INITLOGO := true
 
