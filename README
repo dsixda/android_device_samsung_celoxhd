@@ -6,3 +6,7 @@ Includes ClockworkMod Recovery files for SGH-I757M (Bell Samsung Galaxy S2 HD LT
 Link to stock recovery image: http://d-h.st/users/dsi
 
 Device info (mounts, block sizes, etc.): http://forum.xda-developers.com/showpost.php?p=27007534&postcount=50
+
+NOTE: For now, when building, please set OPTIONS.modelidcfg = False in build/tools/releasetools/ota_from_target_files.  
+This will prevent errors with the missing /system/bin/modelid_cfg.sh when flashing with updater-script.
+
