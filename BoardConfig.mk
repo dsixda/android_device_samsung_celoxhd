@@ -72,3 +72,17 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 # Turn off the 'Android' text-mode splash screen with flashing cursor :P
 TARGET_NO_INITLOGO := true
 
+# MTP
+BOARD_MTP_DEVICE := "/dev/mtp_usb"
+
+
+# FIXME: Overlay has an issue on Quincy when playing video in landscape mode
+COMMON_GLOBAL_CFLAGS += -DQCOM_ROTATOR_KERNEL_FORMATS
+
+# FIXME: needs to be disabled for camera preview to work correctly
+TARGET_QCOM_HDMI_OUT := false
+
+# Workaround for glitches while cropping bypass layers
+TARGET_NO_BYPASS_CROPPING := true
+
+
