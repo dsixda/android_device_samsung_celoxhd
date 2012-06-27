@@ -40,10 +40,6 @@ PRODUCT_COPY_FILES += \
     device/samsung/celoxhd/ramdisk/ueventd.rc:root/ueventd.rc \
     device/samsung/celoxhd/ramdisk/init.emmc.rc:root/init.emmc.rc
 
-# BT firmware
-PRODUCT_COPY_FILES += \
-    device/samsung/celoxhd/firmware/bcm4330B1.hcd:system/etc/firmware/bcm4330B1.hcd
-
 # Vold
 PRODUCT_COPY_FILES += \
     device/samsung/celoxhd/vold.fstab:system/etc/vold.fstab
