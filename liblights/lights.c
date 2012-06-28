@@ -37,6 +37,18 @@ static char const BUTTONS_FILE[]  = "/sys/class/misc/melfas_touchkey/brightness"
 static char const BUTTONS_POWER[] = "/sys/class/misc/melfas_touchkey/enable_disable";
 static char const NOTIFICATION_FILE[] = "/sys/class/misc/backlightnotification/notification_led";
 
+/*  Note from dsixda:
+
+    This file contains some custom code to fix the issue on the SGH-I757M where the button backlights would not
+    turn on.  The parts that were modified from msm8660-common are marked with 'dsixda' enclosed in comments.
+
+    Code was borrowed from Team Chopsticks:
+    https://github.com/TeamChopsticks/cm_device_samsung_msm8660-common/commit/bcc368a193fa400e36c52406d8dcb2273a2d0bf0
+
+*/
+
+
+
 static int write_int(char const *path, int value)
 {
     int fd;
@@ -141,7 +153,7 @@ static int set_light_notifications(struct light_device_t* dev,
 static int set_light_backlight(struct light_device_t *dev,
             struct light_state_t const *state)
 {
-        load_settings();
+    load_settings();
     int err = 0;
     int brightness = rgb_to_brightness(state);
 
