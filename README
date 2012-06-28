@@ -2,14 +2,19 @@ Device folder for Celox HD
 ==========================
 
 Includes ClockworkMod Recovery files for SGH-I757M (Bell Samsung Galaxy S2 HD LTE)
-
-Link to stock recovery image: http://d-h.st/users/dsi
-
 Device info (mounts, block sizes, etc.): http://forum.xda-developers.com/showpost.php?p=27007534&postcount=50
 
 NOTE 1: For now, when building CM9, set OPTIONS.modelidcfg = False in build/tools/releasetools/ota_from_target_files.  This will prevent errors with the missing /system/bin/modelid_cfg.sh when flashing with updater-script.
 
 NOTE 2: For ClockworkMod, to avoid the Nandroid backup process hanging on long file names, open /bootable/recovery/nandroid.c and add the command "return;" to the first line of the 'yaffs_callback' procedure.
+
+
+Include the following in .repo/local_manifest.xml before doing a repo sync:
+
+  <project name="CyanogenMod/android_kernel_samsung_msm8660-common" path="kernel/samsung/msm8660-common" remote="github" revision="ics" />
+  <project name="CyanogenMod/android_device_samsung_msm8660-common" path="device/samsung/msm8660-common" remote="github" revision="ics" />
+
+Copy the kernel defconfig found in my github for the kernel.
 
 
 ROM build instructions:
