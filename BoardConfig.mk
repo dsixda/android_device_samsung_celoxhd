@@ -45,7 +45,7 @@ BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom msm_watchdog.appsbark=0
 BOARD_KERNEL_BASE           := 0x48000000
 BOARD_KERNEL_PAGESIZE       := 2048
 BOARD_FORCE_RAMDISK_ADDRESS := 0x49500000
-TARGET_KERNEL_CONFIG        := msm8660_celoxhd_can_bmc_defconfig
+TARGET_KERNEL_CONFIG        := cyanogenmod_celoxhd_defconfig
 TARGET_KERNEL_SOURCE        := kernel/samsung/msm8660-common
 #TARGET_PREBUILT_KERNEL      := device/samsung/celoxhd/kernel
 
