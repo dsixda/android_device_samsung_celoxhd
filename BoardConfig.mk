@@ -75,7 +75,8 @@ TARGET_NO_INITLOGO := true
 BOARD_MTP_DEVICE := "/dev/mtp_usb"
 
 # NFC
-BOARD_HAVE_NFC := true
+# Need to set it under full_celoxhd.mk
+#BOARD_HAVE_NFC := true
 
 # FIXME: Overlay has an issue on Quincy when playing video in landscape mode
 COMMON_GLOBAL_CFLAGS += -DQCOM_ROTATOR_KERNEL_FORMATS
