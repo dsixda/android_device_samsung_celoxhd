@@ -30,6 +30,10 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/celoxhd/overlay
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
+# Lights
+PRODUCT_PACKAGES += \
+    lights.celoxhd
+
 # Ramdisk
 PRODUCT_COPY_FILES += \
     device/samsung/celoxhd/ramdisk/init.qcom.rc:root/init.qcom.rc \
