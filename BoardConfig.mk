@@ -87,4 +87,6 @@ TARGET_QCOM_HDMI_OUT := false
 # Workaround for glitches while cropping bypass layers
 TARGET_NO_BYPASS_CROPPING := true
 
-
+# Set default USB interface
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mass_storage
