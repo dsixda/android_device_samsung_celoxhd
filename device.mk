@@ -27,8 +27,8 @@ $(call inherit-product-if-exists, vendor/samsung/celoxhd/celoxhd-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += device/samsung/celoxhd/overlay
 
 # Device uses high-density artwork where available
-PRODUCT_AAPT_CONFIG := normal hdpi
-PRODUCT_AAPT_PREF_CONFIG := hdpi
+PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Lights
 PRODUCT_PACKAGES += \
