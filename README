@@ -3,14 +3,16 @@ Device folder for Celox HD
 
 Follow the usual instructions to download sources for CM9, e.g.
 
-  mkdir ~/android/system
-  cd ~/android/system
-  curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo > ~/bin/repo
-  chmod a+x ~/bin/repo
-  repo init -u git://github.com/CyanogenMod/android.git -b ics
+  1) mkdir ~/android/system
+  2) cd ~/android/system
+  3) curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo > ~/bin/repo
+  4) chmod a+x ~/bin/repo
+  5) repo init -u git://github.com/CyanogenMod/android.git -b ics
+
+(You'll need to install some binaries, but those are the basic instructions)
 
 
-Include the following in .repo/local_manifest.xml to grab these additional repositories:
+Include the following in .repo/local_manifest.xml to allow these additional repositories to be synced:
 
   <project name="CyanogenMod/android_kernel_samsung_msm8660-common" path="kernel/samsung/msm8660-common" remote="github" revision="ics" />
   <project name="CyanogenMod/android_device_samsung_msm8660-common" path="device/samsung/msm8660-common" remote="github" revision="ics" />
@@ -31,9 +33,13 @@ Get all the prebuilts, like Rom Manager:
   vendor/cm/get-prebuilts
 
 
-NOTE 1: For now, when building CM9, set OPTIONS.modelidcfg = False in build/tools/releasetools/ota_from_target_files.  This will prevent errors with the missing /system/bin/modelid_cfg.sh when flashing with updater-script.
+NOTE 1: For now, when building CM9, to prevent 'modelid_cfg.sh' errors while flashing with updater-script:
+        1) Open build/tools/releasetools/ota_from_target_files
+        2) Then, look for 'OPTIONS.modelidcfg' and set it to False  
 
-NOTE 2: If building ClockworkMod, to avoid the Nandroid backup process hanging on long file names, open /bootable/recovery/nandroid.c and add the command "return;" to the first line of the 'yaffs_callback' procedure.
+NOTE 2: If building ClockworkMod, to avoid the Nandroid backup process hanging on long file names:
+        1) Open bootable/recovery/nandroid.c 
+        2) In the 'yaffs_callback' procedure, add the command "return;" to the first line
 
 
 Ready to build!
@@ -42,7 +48,6 @@ Ready to build!
 
 
 OPTIONAL: If you want to build ClockworkMod:
-
-  . build/tools/device/makerecoveries.sh cm_celoxhd-eng  <-- OPTIONAL, for ClockworkMod only
+  . build/tools/device/makerecoveries.sh cm_celoxhd-eng 
 
 
