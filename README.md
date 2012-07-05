@@ -32,12 +32,6 @@ repo sync -j4   (NOTE: "4" may be replaced by # of CPU cores on your PC)
 vendor/cm/get-prebuilts
 ```
 
-### NOTE: If you are going to build ClockworkMod, to avoid the Nandroid backup process hanging on long file names:
-```
-1) Open bootable/recovery/nandroid.c 
-2) In the 'yaffs_callback' procedure, add the command "return;" to the first line
-```
-
 ### Ready to build!
 ```
 . build/envsetup.sh
@@ -45,6 +39,14 @@ brunch cm_celoxhd-eng
 ```
 
 ### OPTIONAL: If you want to build ClockworkMod:
+
+### First, to avoid the Nandroid backup process hanging on long file names:
+```
+1) Open bootable/recovery/nandroid.c 
+2) In the 'yaffs_callback' procedure, add the command "return;" to the first line
+```
+
+### Finally:
 ```
 . build/tools/device/makerecoveries.sh cm_celoxhd-eng 
 ```
