@@ -18,16 +18,12 @@ Remain in ~/android/system for the rest of the commands.
 <project name="CyanogenMod/android_kernel_samsung_msm8660-common" path="kernel/samsung/msm8660-common" remote="github" revision="ics" />
 <project name="CyanogenMod/android_device_samsung_msm8660-common" path="device/samsung/msm8660-common" remote="github" revision="ics" />
 <project name="dsixda/android_device_samsung_celoxhd" path="device/samsung/celoxhd" revision="master" />
+<project name="dsixda/android_kernel_samsung_celoxhd" path="kernel/samsung/msm8660-common/arch/arm/configs" revision="master" />
 ```
 
 ### Download or update all repositories:
 ```
 repo sync -j4
-```
-
-### To build the kernel, you need to download the kernel defconfig found in my Github, or include it in your local_manifest.xml:
-```
-<project name="dsixda/android_kernel_samsung_celoxhd" path="kernel/samsung/msm8660-common/arch/arm/configs" revision="master" />
 ```
 
 ### Get all the prebuilts, like ROM Manager:
