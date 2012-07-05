@@ -24,7 +24,7 @@ Remain in ~/android/system for the rest of the commands.
 
 ### Download or update all repositories:
 ```
-repo sync -j4
+repo sync -j4   (NOTE: "4" may be replaced by # of CPU cores on your PC)
 ```
 
 ### Get all the prebuilts, like ROM Manager:
