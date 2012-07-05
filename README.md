@@ -36,15 +36,16 @@ vendor/cm/get-prebuilts
 ```
 
 ### NOTE 1: For now, when building CM9, to prevent 'modelid_cfg.sh' errors while flashing with updater-script:
-
-        1) Open build/tools/releasetools/ota_from_target_files
-        2) Then, look for 'OPTIONS.modelidcfg' and set it to False  
+```
+1) Open build/tools/releasetools/ota_from_target_files
+2) Then, look for 'OPTIONS.modelidcfg' and set it to False  
+```
 
 ### NOTE 2: If building ClockworkMod, to avoid the Nandroid backup process hanging on long file names:
-
-        1) Open bootable/recovery/nandroid.c 
-        2) In the 'yaffs_callback' procedure, add the command "return;" to the first line
-
+```
+1) Open bootable/recovery/nandroid.c 
+2) In the 'yaffs_callback' procedure, add the command "return;" to the first line
+```
 
 ### Ready to build!
 ```
