@@ -90,3 +90,7 @@ TARGET_NO_BYPASS_CROPPING := true
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mass_storage
+
+# Prevent modelid_cfg.sh error when flashing
+TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/samsung/celoxhd/releasetools/ota_from_target_files
+
