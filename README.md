@@ -17,6 +17,7 @@ Remain in ~/android/system for the rest of the commands.
 ```
 <project name="CyanogenMod/android_kernel_samsung_msm8660-common" path="kernel/samsung/msm8660-common" remote="github" revision="ics" />
 <project name="CyanogenMod/android_device_samsung_msm8660-common" path="device/samsung/msm8660-common" remote="github" revision="ics" />
+<project name="dsixda/android_device_samsung_celoxhd" path="device/samsung/celoxhd" revision="master" />
 ```
 
 ### Download or update all repositories:
