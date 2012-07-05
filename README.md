@@ -1,4 +1,4 @@
-## Device folder for Celox HD
+## Build Instructions for Celox HD
 
 
 ### Follow the usual instructions to download sources for CM9, e.g.
