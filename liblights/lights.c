@@ -179,15 +179,21 @@ static int set_light_buttons(struct light_device_t *dev,
 {
     load_settings();
     int err = 0;
+
+    /*
     int touch_led_control = state->color & 0x00ffffff ? 1 : 2; 
 
     LOGD("set_light_buttons: color=%#010x, tlc=%u.", state->color,
          touch_led_control);
+    */
 
     pthread_mutex_lock(&g_lock);
     if (g_enable_touchlight == -1 || g_enable_touchlight == 1) {
-        err = write_int(BUTTONS_FILE, touch_led_control);
+        /* err = write_int(BUTTONS_FILE, touch_led_control); */
+        LOGD("set_light_buttons: 1");
+        err = write_int(BUTTONS_FILE, 1);
     } else {
+        LOGD("set_light_buttons: 2");
 	    err = write_int(BUTTONS_FILE, 2);
     }	
     pthread_mutex_unlock(&g_lock);
