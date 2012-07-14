@@ -102,7 +102,7 @@ persist.sys.usb.config=mass_storage
 # qcom display options
 debug.enabletr=true
 com.qc.hardware=true
-#ro.sf.compbypass.enable=1
+ro.sf.compbypass.enable=1
 com.qc.hdmi_out=true
 ro.hdmi.enable=true
 debug.sf.hw=1
