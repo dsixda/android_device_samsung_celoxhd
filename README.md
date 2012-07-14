@@ -9,16 +9,15 @@
 4) chmod a+x ~/bin/repo
 5) repo init -u git://github.com/CyanogenMod/android.git -b ics
 ```
-(You'll need to install some binaries, but those are the basic instructions)
+(You'll need to install some binaries, but those are the basic instructions. Google for the full setup details.)
 
 Remain in ~/android/system for the rest of the commands.
 
 ### Include the following in .repo/local_manifest.xml to allow these additional repositories to be synced:
 ```
-<project name="CyanogenMod/android_kernel_samsung_msm8660-common" path="kernel/samsung/msm8660-common" remote="github" revision="ics" />
 <project name="CyanogenMod/android_device_samsung_msm8660-common" path="device/samsung/msm8660-common" remote="github" revision="ics" />
 <project name="dsixda/android_device_samsung_celoxhd" path="device/samsung/celoxhd" revision="master" />
-<project name="dsixda/android_kernel_samsung_celoxhd" path="kernel/samsung/msm8660-common/arch/arm/configs" revision="master" />
+<project name="dsixda/android_kernel_samsung_msm8660-common" path="kernel/samsung/msm8660-common" revision="master" />
 <project name="dsixda/android_vendor_samsung_celoxhd" path="vendor/samsung/celoxhd" revision="master" />
 ```
 
