@@ -82,7 +82,12 @@ BOARD_MTP_DEVICE := "/dev/mtp_usb"
 COMMON_GLOBAL_CFLAGS += -DQCOM_ROTATOR_KERNEL_FORMATS
 
 # FIXME: needs to be disabled for camera preview to work correctly
-TARGET_QCOM_HDMI_OUT := false
+# TARGET_QCOM_HDMI_OUT := false
+
+# Audio
+TARGET_USES_QCOM_LPA := true
+COMMON_GLOBAL_CFLAGS += -DWITH_QCOM_LPA
+BOARD_HAS_SAMSUNG_VOLUME_BUG := true
 
 # Workaround for glitches while cropping bypass layers
 TARGET_NO_BYPASS_CROPPING := true
