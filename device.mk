@@ -22,7 +22,6 @@ PRODUCT_COPY_FILES += device/common/gps/gps.conf_US_SUPL:system/etc/gps.conf
 ## (2) Also get non-open-source specific aspects if available
 $(call inherit-product-if-exists, vendor/samsung/celoxhd/celoxhd-vendor.mk)
 
-
 ## overlays
 DEVICE_PACKAGE_OVERLAYS += device/samsung/celoxhd/overlay
 
