@@ -47,6 +47,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/samsung/celoxhd/vold.fstab:system/etc/vold.fstab
 
+# Fix for missing modelid_cfg.sh in ROM
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/bin/modelid_cfg.sh:system/bin/modelid_cfg.sh
 
 # common msm8660
 $(call inherit-product, device/samsung/msm8660-common/msm8660.mk)
