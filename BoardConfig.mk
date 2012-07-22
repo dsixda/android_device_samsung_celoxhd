@@ -27,14 +27,14 @@ USE_CAMERA_STUB := true
 
 # inherit from common msm8660
 -include device/samsung/msm8660-common/BoardConfigCommon.mk
-TARGET_NO_BOOTLOADER := true
-TARGET_BOARD_PLATFORM := msm8660
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
 
 # inherit from the proprietary version
 -include vendor/samsung/celoxhd/BoardConfigVendor.mk
 
+TARGET_NO_BOOTLOADER := true
+TARGET_BOARD_PLATFORM := msm8660
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
 TARGET_BOOTLOADER_BOARD_NAME := celoxhd
 
 # Assert
@@ -96,6 +96,4 @@ TARGET_NO_BYPASS_CROPPING := true
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mass_storage
 
-# Prevent modelid_cfg.sh error when flashing
-TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/samsung/celoxhd/releasetools/ota_from_target_files
 
