@@ -30,12 +30,25 @@
 
 static pthread_once_t g_init = PTHREAD_ONCE_INIT;
 static pthread_mutex_t g_lock = PTHREAD_MUTEX_INITIALIZER;
+static int g_notification_blink_support = 0;
+static int g_notification_blink_rate_support = 0;
 static int g_enable_touchlight = -1;
 
 static char const LCD_FILE[]      = "/sys/class/leds/lcd-backlight/brightness";
 static char const BUTTONS_FILE[]  = "/sys/class/misc/melfas_touchkey/brightness";
-static char const BUTTONS_POWER[] = "/sys/class/misc/melfas_touchkey/enable_disable";
+/*static char const BUTTONS_POWER[] = "/sys/class/misc/melfas_touchkey/enable_disable";*/
 static char const NOTIFICATION_FILE[] = "/sys/class/misc/backlightnotification/notification_led";
+static char const NOTIFICATION_BLINK_FILE[]    = "/sys/class/misc/backlightnotification/blink_control";
+static char const NOTIFICATION_BLINK_RATE_FILE[] = "/sys/class/misc/backlightnotification/blink_interval";
+
+void init_globals(void)
+{
+    pthread_mutex_init(&g_lock, NULL);
+
+    g_notification_blink_support = (access(NOTIFICATION_BLINK_FILE, W_OK) == 0) ? 1 : 0;
+
+    g_notification_blink_rate_support = (access(NOTIFICATION_BLINK_RATE_FILE, W_OK) == 0) ? 1 : 0;
+}
 
 static int write_int(char const *path, int value)
 {
@@ -128,11 +141,20 @@ static int set_light_notifications(struct light_device_t* dev,
    int res = 0;
    int bln_led_control = state->color & 0x00ffffff ? 1 : 0;
 
-   LOGD("set_light_notification: color=%#010x, klc=%u.", state->color,
-        bln_led_control);
+   LOGD("set_light_notification: color=%#010x, klc=%u, flash=%d/%d", state->color,
+	bln_led_control, state->flashOnMS, state->flashOffMS);
 
    pthread_mutex_lock(&g_lock);
    res = write_int(NOTIFICATION_FILE, bln_led_control);
+
+   if (g_notification_blink_support && bln_led_control && state->flashMode) {
+       if (g_notification_blink_rate_support) {
+           char buffer[10];
+           snprintf(buffer, sizeof(buffer), "%d %d", state->flashOnMS, state->flashOffMS);
+           res = write_str(NOTIFICATION_BLINK_RATE_FILE, buffer);
+       }
+       res = write_int(NOTIFICATION_BLINK_FILE, bln_led_control);
+   }
 
    /* This fixes the issue where the button light goes off after you 
       unlock the screen during a notification */
@@ -159,7 +181,7 @@ static int set_light_backlight(struct light_device_t *dev,
     err = write_int(LCD_FILE, brightness);
 	
     if (g_enable_touchlight == -1 || g_enable_touchlight == 1) {
-    	err = write_int(BUTTONS_FILE, brightness > 0 ? 1 : 2);
+    	err = write_int(BUTTONS_FILE, 1);
     } else {
 	    err = write_int(BUTTONS_FILE, 2);
     }	
@@ -231,7 +253,7 @@ static int open_lights(const struct hw_module_t *module, char const *name,
     else
         return -EINVAL;
 
-    pthread_mutex_init(&g_lock, NULL);
+    pthread_once(&g_init, init_globals);
 
     struct light_device_t *dev = malloc(sizeof(struct light_device_t));
     memset(dev, 0, sizeof(*dev));
