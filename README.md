@@ -23,13 +23,23 @@ Remain in ~/android/system for the rest of the commands.
 
 ### Download or update all repositories:
 ```
-repo sync -j4   (NOTE: "4" may be replaced by # of CPU cores on your PC)
+repo sync -j4   
 ```
+NOTE: The "4" may be replaced by # of CPU cores on your PC)
+
 
 ### Get all the prebuilts, like ROM Manager:
 ```
 vendor/cm/get-prebuilts
 ```
+
+### Optimize your Linux installation for future rebuilds:
+```
+echo "USE_CCACHE=1" >> ~/.bashrc
+prebuilt/linux-x86/ccache/ccache -M 20G
+```
+NOTE: 20GB cache here, but can be changed later
+
 
 ### Ready to build!
 ```
