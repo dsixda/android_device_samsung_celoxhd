@@ -29,7 +29,7 @@ Remain in ~/android/system for the rest of the commands.
 ```
 repo sync -j4   
 ```
-NOTE: The "4" may be replaced by # of CPU cores on your PC)
+NOTE: The "4" may be replaced by # of CPU cores on your PC
 
 
 ### Get all the prebuilts, like ROM Manager:
