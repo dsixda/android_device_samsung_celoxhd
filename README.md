@@ -41,7 +41,7 @@ vendor/cm/get-prebuilts
 ```
 1) Open up kernel/samsung/msm8660-common/Makefile
 2) Edit the line starting with 'CROSS-COMPILE' to point to: 
-     ~/android/system/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi-
+     ~/android/system/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi-
 ```
 
 ### Optimize your Linux installation for future rebuilds:
