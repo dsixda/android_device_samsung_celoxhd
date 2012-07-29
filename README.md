@@ -39,7 +39,7 @@ vendor/cm/get-prebuilts
 
 ### Optimize your Linux installation for future rebuilds:
 ```
-echo "USE_CCACHE=1" >> ~/.bashrc
+echo "export USE_CCACHE=1" >> ~/.bashrc
 prebuilt/linux-x86/ccache/ccache -M 20G
 ```
 NOTE: 20GB cache here, but can be changed later
