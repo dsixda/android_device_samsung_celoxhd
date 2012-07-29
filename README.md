@@ -37,6 +37,13 @@ NOTE: The "4" may be replaced by # of CPU cores on your PC
 vendor/cm/get-prebuilts
 ```
 
+### You might need to update your cross-compiler path:
+```
+1) Open up kernel/samsung/msm8660-common/Makefile
+2) Edit the line starting with 'CROSS-COMPILE' to point to: 
+     ~/android/system/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi-
+```
+
 ### Optimize your Linux installation for future rebuilds:
 ```
 echo "export USE_CCACHE=1" >> ~/.bashrc
