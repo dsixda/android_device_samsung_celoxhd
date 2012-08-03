@@ -48,6 +48,7 @@ vendor/cm/get-prebuilts
 ```
 echo "export USE_CCACHE=1" >> ~/.bashrc
 prebuilt/linux-x86/ccache/ccache -M 20G
+source ~/.bashrc
 ```
 NOTE: 20GB cache here, but can be changed later
 
