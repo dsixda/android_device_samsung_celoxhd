@@ -38,7 +38,7 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_BOOTLOADER_BOARD_NAME := celoxhd
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := SGH-I757M,SGH-I757,celoxhd
+TARGET_OTA_ASSERT_DEVICE := SGH-I757M,SGH-I757,celoxhd,SGHI757M,SGHI757
 
 # Kernel
 BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom msm_watchdog.appsbark=0 msm_watchdog.enable=1 loglevel=4
@@ -51,6 +51,9 @@ TARGET_KERNEL_SOURCE        := kernel/samsung/msm8660-common
 
 # Override bootable/recovery/minui/graphics.c
 BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/celoxhd/recovery/graphics.c
+
+# For CWM
+#BOARD_TOUCH_RECOVERY := true
 
 # From /proc/partitions (each were multiplied by 1024)
 BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
