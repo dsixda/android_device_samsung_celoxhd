@@ -30,8 +30,8 @@ PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Lights
-PRODUCT_PACKAGES += \
-    lights.celoxhd
+#PRODUCT_PACKAGES += \
+#    lights.celoxhd
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
