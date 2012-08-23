@@ -20,7 +20,7 @@ Remain in ~/android/system for the rest of the commands.
   <remote fetch="http://github.com/" name="gh" revision="master" />
   <project name="CyanogenMod/android_device_samsung_msm8660-common" path="device/samsung/msm8660-common" remote="github" revision="ics" />
   <project name="dsixda/android_device_samsung_celoxhd" path="device/samsung/celoxhd" revision="master" />
-  <project name="dsixda/android_kernel_samsung_msm8660-common" path="kernel/samsung/msm8660-common" revision="master" />
+  <project name="dsixda/android_kernel_samsung_msm8660-common" path="kernel/samsung/msm8660-common" revision="ics" />
   <project name="dsixda/android_vendor_samsung_celoxhd" path="vendor/samsung/celoxhd" revision="master" />
 </manifest>
 ```
