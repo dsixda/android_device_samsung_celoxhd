@@ -69,8 +69,8 @@ persist.usb_mass_storage.notify=0
 #
 ro.telephony.call_ring.multiple=0
 
-# for 480x800 panel
-ro.sf.lcd_density=240
+# For 720x1280 panel
+ro.sf.lcd_density=320
 
 # Fields for custom RIL
 # MAX PROP NAME is 31 chars --|
@@ -97,11 +97,11 @@ ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
 persist.sys.usb.config=mass_storage
 
 # qcom display options
-debug.enabletr=true
 com.qc.hardware=true
-ro.sf.compbypass.enable=1
-com.qc.hdmi_out=true
 ro.hdmi.enable=true
 debug.sf.hw=1
+debug.egl.hw=1
 debug.composition.type=dyn
-debug.mdpcomp.maxlayer=2
+debug.mdpcomp.maxlayer=3
+debug.mdpcomp.logs=0
+ro.hwui.text_cache_width=2048
