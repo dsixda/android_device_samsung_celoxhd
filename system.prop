@@ -102,6 +102,7 @@ ro.hdmi.enable=true
 debug.sf.hw=1
 debug.egl.hw=1
 debug.composition.type=dyn
-debug.mdpcomp.maxlayer=3
+debug.mdpcomp.maxlayer=2
 debug.mdpcomp.logs=0
 ro.hwui.text_cache_width=2048
+
