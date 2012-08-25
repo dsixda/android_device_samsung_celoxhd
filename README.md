@@ -1,13 +1,14 @@
 ## Build Instructions for Celox HD
 
+### NOTE: This is a placeholder copied from CM9 README.md.  Still a work in progress, may not be correct instructions!!
 
-### Follow the usual instructions to download sources for CM9, e.g.
+### Follow the usual instructions to download sources for CM10, e.g.
 ```
 1) mkdir ~/android/system
 2) cd ~/android/system
 3) curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo > ~/bin/repo
 4) chmod a+x ~/bin/repo
-5) repo init -u git://github.com/CyanogenMod/android.git -b ics
+5) repo init -u git://github.com/CyanogenMod/android.git -b jellybean
 ```
 (You'll need to install some binaries, but those are the basic instructions. Google for the full setup details.)
 
@@ -18,10 +19,10 @@ Remain in ~/android/system for the rest of the commands.
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <remote fetch="http://github.com/" name="gh" revision="master" />
-  <project name="CyanogenMod/android_device_samsung_msm8660-common" path="device/samsung/msm8660-common" remote="github" revision="ics" />
-  <project name="dsixda/android_device_samsung_celoxhd" path="device/samsung/celoxhd" revision="ics" />
-  <project name="dsixda/android_kernel_samsung_msm8660-common" path="kernel/samsung/msm8660-common" revision="ics" />
-  <project name="dsixda/android_vendor_samsung_celoxhd" path="vendor/samsung/celoxhd" revision="ics" />
+  <project name="CyanogenMod/android_device_samsung_msm8660-common" path="device/samsung/msm8660-common" remote="github" revision="jellybean" />
+  <project name="dsixda/android_device_samsung_celoxhd" path="device/samsung/celoxhd" revision="jellybean" />
+  <project name="dsixda/android_kernel_samsung_msm8660-common" path="kernel/samsung/msm8660-common" revision="jellybean" />
+  <project name="dsixda/android_vendor_samsung_celoxhd" path="vendor/samsung/celoxhd" revision="jellybean" />
 </manifest>
 ```
 

@@ -26,12 +26,8 @@ $(call inherit-product-if-exists, vendor/samsung/celoxhd/celoxhd-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += device/samsung/celoxhd/overlay
 
 # Device uses high-density artwork where available
-PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
-
-# Lights
-#PRODUCT_PACKAGES += \
-#    lights.celoxhd
+PRODUCT_AAPT_CONFIG := normal hdpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
@@ -41,20 +37,21 @@ PRODUCT_COPY_FILES += \
     device/samsung/celoxhd/ramdisk/init.qcom.usb.sh:root/init.qcom.usb.sh \
     device/samsung/celoxhd/ramdisk/init.target.rc:root/init.target.rc \
     device/samsung/celoxhd/ramdisk/ueventd.rc:root/ueventd.rc \
-    device/samsung/celoxhd/ramdisk/init.emmc.rc:root/init.emmc.rc
+    device/samsung/celoxhd/ramdisk/init.emmc.rc:root/init.emmc.rc \
+    device/samsung/celoxhd/fstab.qcom:root/fstab.qcom
+
+# BT firmware
+PRODUCT_COPY_FILES += \
+    device/samsung/celoxhd/firmware/bcm4330B1.hcd:system/etc/firmware/bcm4330B1.hcd
 
 # Vold
 PRODUCT_COPY_FILES += \
     device/samsung/celoxhd/vold.fstab:system/etc/vold.fstab
 
-# Fix for missing modelid_cfg.sh in ROM
-PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/bin/modelid_cfg.sh:system/bin/modelid_cfg.sh
-
 # common msm8660
 $(call inherit-product, device/samsung/msm8660-common/msm8660.mk)
 
-$(call inherit-product, frameworks/base/build/phone-xhdpi-1024-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 $(call inherit-product-if-exists, vendor/samsung/celoxhd/celoxhd-vendor.mk)
 

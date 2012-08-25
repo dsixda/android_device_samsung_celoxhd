@@ -25,13 +25,11 @@
 PRODUCT_PACKAGES := \
     Torch
 
-# NFC
 BOARD_HAVE_NFC := true
-
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-# Inherit from celox device
+# Inherit from celoxhd device
 $(call inherit-product, device/samsung/celoxhd/device.mk)
 
 # Set those variables here to overwrite the inherited values.
