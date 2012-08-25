@@ -58,6 +58,12 @@ NOTE: 20GB cache here, but can be changed later
 brunch cm_celoxhd-eng
 ```
 
+Subsequent builds only require the brunch command above, but if you modified BoardConfig.mk, you'll need to clean out the build output folder before running brunch (in order to pick up its changes). In that case, run this before using brunch:
+```
+make clobber
+```
+
+
 ### OPTIONAL: If you want to build ClockworkMod:
 ```
 . build/envsetup.sh
