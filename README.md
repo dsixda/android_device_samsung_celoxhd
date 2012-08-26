@@ -1,7 +1,5 @@
 ## Build Instructions for Celox HD
 
-### NOTE: This is a placeholder copied from CM9 README.md.  Still a work in progress, may not be 100% correct instructions!!
-
 ### Follow the usual instructions to download sources for CM10, e.g.
 ```
 1) mkdir ~/android/system
@@ -25,7 +23,7 @@ Remain in ~/android/system for the rest of the commands.
   <project name="dsixda/android_vendor_samsung_celoxhd" path="vendor/samsung/celoxhd" revision="jellybean" />
 </manifest>
 ```
-NOTE: For the kernel you need "arch/arm/configs/cyanogenmod_celoxhd_defconfig".  Please ask me for a working version.
+NOTE: Under the kernel folder you need to add "arch/arm/configs/cyanogenmod_celoxhd_defconfig".  Download the file from here:  https://raw.github.com/dsixda/android_kernel_samsung_msm8660-common/jellybean/arch/arm/configs/cyanogenmod_celoxhd_defconfig
 
 
 ### Download or update all repositories:
