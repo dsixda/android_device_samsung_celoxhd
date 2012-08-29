@@ -13,8 +13,10 @@ persist.rild.nitz_short_ons_1=
 persist.rild.nitz_short_ons_2=
 persist.rild.nitz_short_ons_3=
 ril.subscription.types=NV,RUIM
-
 dev.pm.dyn_samplingrate=1
+
+# video Blocking for HDMI
+persist.sys.hdmi.on=0
 
 #system props for the MM modules
 media.stagefright.enable-player=true
@@ -22,6 +24,7 @@ media.stagefright.enable-http=true
 media.stagefright.enable-fma2dp=false
 media.stagefright.enable-aac=true
 media.stagefright.enable-qcp=true
+media.stagefright.enable-scan=true
 
 ro.vendor.extension_library=/system/lib/libqc-opt.so
 
@@ -51,6 +54,8 @@ persist.audio.vr.enable=false
 #
 # 131072 is decimal for 0x20000 to report version 2
 ro.opengles.version=131072
+
+net.bt.name=Android
 
 #
 # System prop for sending transmit power request to RIL during WiFi hotspot on/off
