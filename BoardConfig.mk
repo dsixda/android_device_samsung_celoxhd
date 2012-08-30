@@ -65,14 +65,12 @@ BOARD_SUPPRESS_EMMC_WIPE := true
 # MTP
 # TODO (orphaned) BOARD_MTP_DEVICE := "/dev/mtp_usb"
 
-# Audio
-# TODO (orphaned) TARGET_USES_QCOM_LPA := true
-COMMON_GLOBAL_CFLAGS += -DWITH_QCOM_LPA
-# TODO (orphaned) BOARD_HAS_SAMSUNG_VOLUME_BUG := true
-
 # Disable initlogo, Samsungs framebuffer is weird
 TARGET_NO_INITLOGO := true
 
 # Preload the boot animation to avoid jerkiness
 TARGET_BOOTANIMATION_PRELOAD := true
+
+# VoIP
+#COMMON_GLOBAL_CFLAGS += -DQCOM_VOIP_ENABLED
 
